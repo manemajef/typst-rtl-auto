@@ -34,6 +34,12 @@ English paragraph here.
 - מוצגת מימין לשמאל
 ```
 
+## Example
+
+See [example.typ](./example.typ)
+
+![alt text](./assets/image.png)
+
 ## API
 
 ### `rtl-auto`
