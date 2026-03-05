@@ -8,13 +8,13 @@ Sets `text.dir` per block using the **first strong character** rule — the same
 
 ```typst
 // Published package import
-#import "@preview/bidi-flow:0.1.0": *
+#import "@preview/bidi-flow:0.1.1": *
 ```
 
 ## Quick start
 
 ```typst
-#import "@preview/bidi-flow:0.1.0": *
+#import "@preview/bidi-flow:0.1.1": *
 #show: bidi-flow
 
 = Hello        // → LTR heading
@@ -30,8 +30,6 @@ English paragraph here.
 - רשימה בעברית
 - מוצגת מימין לשמאל
 ```
-
-For a longer real-world example, see [`test.typ`](test.typ).
 
 ![Example output](assets/image.png)
 
@@ -85,11 +83,11 @@ Useful for fixing punctuation and number alignment in mixed runs:
 ## Local installation
 
 ```sh
-mkdir -p ~/.local/share/typst/packages/local/bidi-flow/0.1.0
-cp -r . ~/.local/share/typst/packages/local/bidi-flow/0.1.0/
+mkdir -p ~/.local/share/typst/packages/local/bidi-flow/0.1.1
+cp -r . ~/.local/share/typst/packages/local/bidi-flow/0.1.1/
 ```
 
-Then import with `@local/bidi-flow:0.1.0`.
+Then import with `@local/bidi-flow:0.1.1`.
 
 ## Notes
 
@@ -97,3 +95,14 @@ Then import with `@local/bidi-flow:0.1.0`.
 - Direction detection ignores `math.equation` and `raw` blocks
 - Works with `strong`, `emph`, `link`, and other inline wrappers
 - `#r` / `#l` are content values, not functions — do not call them with brackets
+
+## Changes in 0.1.1 (Non-Breaking)
+
+- Added optional font overrides to `bidi-flow` (existing usage continues to work unchanged):
+  - `latin-font`
+  - `arab-font`
+  - `hebrew-font`
+
+## Repository
+
+See [original source repository](https://github.com/manemajef/bidi-flow)

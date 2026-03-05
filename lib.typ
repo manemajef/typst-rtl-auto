@@ -78,7 +78,12 @@
 /// Automatically sets `text.dir` for every `par`, `heading`, `list`, `enum`,
 /// and `table` based on the first strong (Hebrew/Arabic vs Latin) character.
 /// RTL blocks get `dir: rtl`; everything else keeps Typst's default (`auto`).
-#let bidi-flow = body => {
+#let bidi-flow = (latin-font: none, arab-font: none, hebrew-font: none, body) => {
+  let rollback-font = "Libertinus Serif"
+  if latin-font != none { set text(font: (latin-font, rollback-font)) }
+  if arab-font != none { show regex("\p{Arabic}"): set text(font: (arab-font, rollback-font)) }
+  if hebrew-font != none { show regex("\p{Hebrew}"): set text(font: (hebrew-font, rollback-font)) }
+
   show par: it => if detect-dir(it.body) == rtl [
     #set text(dir: rtl)
     #it

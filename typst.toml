@@ -1,6 +1,6 @@
 [package]
 name = "bidi-flow"
-version = "0.1.0"
+version = "0.1.1"
 entrypoint = "lib.typ"
 authors = ["Jeff"]
 license = "MIT"
@@ -8,4 +8,4 @@ description = "Automatic RTL/LTR direction detection for mixed-direction documen
 keywords = ["rtl", "bidi", "hebrew", "arabic", "direction"]
 categories = ["text", "utility"]
 compiler = "0.14.0"
-exclude = ["main.typ", "main.pdf", "debug.pdf", ".claude/", "test.typ"]
+exclude = ["main.typ", "main.pdf", "debug.pdf", ".claude/"]
